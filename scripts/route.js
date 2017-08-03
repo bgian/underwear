@@ -22,45 +22,54 @@ module.exports = {
 			if (err) {
 				return console.log(err);
 			}else{
-				console.log('Added route to web.js routes file.')
+                console.log('-----------------------------------------')
+                console.log('Tasks')
+                console.log('-----------------------------------------')
+				console.log('- Added route to web.js routes file. ✅')
+
+                //================================================
+                var frontendFile = fs.readFileSync(frontendFilePath, 'utf-8').toString().split("\n")
+                frontendFile.splice(1, 0, "import " + componentName[componentName.length - 1] + 'Page' + " from '../../views/" + component + "'")
+
+                let lineNumber = 0
+                for(let i = 0; i < frontendFile.length; i++) {
+                    if(frontendFile[i] == "const components = {") {
+                        lineNumber = i
+                    }
+                }
+
+                if(lineNumber > 0) {
+                    frontendFile.splice(lineNumber + 1, 0, "    " + componentName[componentName.length - 1] + 'Page,')
+                }
+                var text = frontendFile.join("\n")
+                fs.writeFile(frontendFilePath, text, function (err) {
+                    if (err) {
+                        return console.log(err);
+                    }else{
+                        console.log('- Imported the component on routes.js in your frontend assets. ✅')
+
+                        //============================
+                        if (!fs.existsSync(__dirname + "/../resources/views/" + componentName[0])) {
+                            fs.mkdirSync(__dirname + "/../resources/views/" + componentName[0])
+                        }
+
+                        fs.writeFile(__dirname + "/../resources/views/" + component + '.vue', "<template><div>I am your new vue component</div></template>", function(err) {
+                            if(err) {
+                                return console.log(err);
+                            }else{
+                                console.log("- A new vue file was saved: " + component + '.vue ✅');
+                            }
+                        });
+                    }
+                });
 			}
 		});
 
-    	//================================================
-    	var frontendFile = fs.readFileSync(frontendFilePath, 'utf-8').toString().split("\n")
-    	frontendFile.splice(1, 0, "import " + componentName[componentName.length - 1] + 'Page' + " from '../../views/" + component + "'")
-
-		let lineNumber = 0
-    	for(let i = 0; i < frontendFile.length; i++) {
-    		if(frontendFile[i] == "const components = {") {
-    			lineNumber = i
-    		}
-    	}
-
-    	if(lineNumber > 0) {
-    		frontendFile.splice(lineNumber + 1, 0, "	" + componentName[componentName.length - 1] + 'Page,')
-    	}
-    	var text = frontendFile.join("\n")
-    	fs.writeFile(frontendFilePath, text, function (err) {
-			if (err) {
-				return console.log(err);
-			}else{
-				console.log('Imported the componented on routes.js in your frontend assets.')
-			}
-		});
-
-		//============================
-		fs.writeFile(__dirname + "/../resources/views/" + component + '.vue', "<template><div>I am your new vue component</div></template>", function(err) {
-    		if(err) {
-        		return console.log(err);
-    		}else{
-    			console.log("A new vue file was saved: " + component + '.vue');
-    		}
-		});
-
-		return "Your new route was successfully added." 
+		return "Your new route was successfully added. 🙌" 
     }
 };
 
 
-require('make-runnable');
+require('make-runnable/custom')({
+    printOutputFrame: false
+})
