@@ -1,10 +1,25 @@
 <template>
-	<form @submit.prevent="register">
-		<input v-model="auth.name" id="name" type="text" placeholder="Your name" />
-		<input v-model="auth.email" id="email" type="email" placeholder="Your email" />
-		<input v-model="auth.password" id="password" type="password" placeholder="Your password"/>
-		<input type="submit" value="regitser" />
-	</form>
+	<div class="container push">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<form @submit.prevent="login">
+					<div class="form-group">
+	    				<label for="exampleInputName1">Your name</label>
+	    				<input v-model="auth.name" type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+	  				</div>
+	  				<div class="form-group">
+	    				<label for="exampleInputEmail1">Email address</label>
+	    				<input v-model="auth.email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+	  				</div>
+	  				<div class="form-group">
+	    				<label for="exampleInputPassword1">Password</label>
+	    				<input v-model="auth.password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+	  				</div>
+	  				<button type="submit" class="btn btn-default">Register</button>
+				</form>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script>

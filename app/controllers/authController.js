@@ -40,7 +40,12 @@ exports.register = (req, res) => {
 	}
 }
 
-
+/**
+ * Function for logging in the user
+ * 
+ * @param  {object} req The request object
+ * @param  {object} res The response object
+ */
 exports.login = (req, res) => {
 	User.findOne({
 		email: req.body.email
@@ -55,7 +60,6 @@ exports.login = (req, res) => {
   				message: 'Authentication failed. User not found.'
   			})
 		} else {
-			console.log(user.comparePassword(req.body.password))
 			if(!user.comparePassword(req.body.password)) {
 				res.status(401).json({
   					success: false, 
