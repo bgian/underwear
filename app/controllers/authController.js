@@ -55,7 +55,7 @@ exports.login = (req, res) => {
   				message: 'Authentication failed. User not found.'
   			})
 		} else {
-			console.log(req.body.password)
+			console.log(user.comparePassword(req.body.password))
 			if(!user.comparePassword(req.body.password)) {
 				res.status(401).json({
   					success: false, 

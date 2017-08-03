@@ -9,7 +9,7 @@ const userSchema = require('./schema')
  * @param  {string} password The users password
  * @return {string}          The hashed value of the password
  */
-userSchema.methods.generateHash = (password) => {
+userSchema.methods.generateHash = function(password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null)
 }
 
@@ -19,8 +19,9 @@ userSchema.methods.generateHash = (password) => {
  * @param  {string} passw The users password
  * @param  {function} cb The callback function
  */
-userSchema.methods.comparePassword = (passw) => {
-    return bcrypt.compare(passw, this.password);
+userSchema.methods.comparePassword = function(password) {
+	var user = this;
+    return bcrypt.compareSync(password, user.password);
 }
 
 
