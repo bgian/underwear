@@ -1,13 +1,11 @@
 import LandingPage from '../../views/base/Landing'
 import LoginPage from '../../views/auth/Login'
 import RegisterPage from '../../views/auth/Register'
-import HomePage from '../../views/user/Home'
 
 const components = {
 	LandingPage,
 	LoginPage, 
-	RegisterPage,
-	HomePage
+	RegisterPage
 }
 
 const routes = require('../../../routes/web')
