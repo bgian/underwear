@@ -25,7 +25,7 @@ module.exports = {
                 console.log('-----------------------------------------')
                 console.log('Tasks')
                 console.log('-----------------------------------------')
-				console.log('- Added route to web.js routes file. ✅')
+				console.log('✅ Added route to web.js routes file.')
 
                 //================================================
                 var frontendFile = fs.readFileSync(frontendFilePath, 'utf-8').toString().split("\n")
@@ -46,7 +46,7 @@ module.exports = {
                     if (err) {
                         return console.log(err);
                     }else{
-                        console.log('- Imported the component on routes.js in your frontend assets. ✅')
+                        console.log('✅ Imported the component on routes.js in your frontend assets.')
 
                         //============================
                         if (!fs.existsSync(__dirname + "/../resources/views/" + componentName[0])) {
@@ -57,7 +57,7 @@ module.exports = {
                             if(err) {
                                 return console.log(err);
                             }else{
-                                console.log("- A new vue file was saved: " + component + '.vue ✅');
+                                console.log("✅ A new vue file was saved: " + component + '.vue');
                             }
                         });
                     }
