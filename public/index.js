@@ -12,7 +12,9 @@ const config = require('../config')
 require('dotenv').config()
 
 // Configuration ===============================================================
-mongoose.connect(config.database.url + config.database.db);
+if(process.env.DB_NAME) {
+	mongoose.connect(config.database.url + config.database.db);
+}
 
 
 // Setup view engine ===============================================================
