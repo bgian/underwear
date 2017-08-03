@@ -6,7 +6,8 @@
     "scripts": {
         "test-unit": "istanbul cover _mocha $(find ./test -name \"*.spec.js\" -not -path \"./node_modules/*\")",
         "new-route": "node scripts/route.js generate",
-        "start": "nodemon index.js",
+        "start": "node index.js",
+        "start-watch": "nodemon index.js",
         "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
