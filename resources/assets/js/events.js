@@ -1,0 +1,3 @@
+window.Events = new Vue({
+
+});
