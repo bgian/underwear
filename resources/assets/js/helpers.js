@@ -1,7 +1,9 @@
+import Cookies from './cookies'
+
 export default {
     data() {
         return {
-            
+            cookies: new Cookies()
         }
     },
 
@@ -40,6 +42,11 @@ export default {
                 const lName = split[split.length - 1];
                 return (fName[0] + lName[0]).toUpperCase();
             }
+        },
+
+        logout() {
+            this.cookies.removeItem('token', '/');
+            window.location.href= "/";
         }
 
 	}

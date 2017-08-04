@@ -29,12 +29,19 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(express.static('public'))
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 // Setup passport configuration for authentication ============================================================
 require('../config/passport')(passport)
 app.use(session({ 
 	secret: process.env.APP_ID,
 	resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: { secure: true }
 }))
 app.use(passport.initialize())
 app.use(passport.session())

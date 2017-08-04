@@ -9,7 +9,7 @@ import mutations from './mutations'
  */
 
 const state = {
-    user: {}
+    user: false
 }
 
 export default new Vuex.Store({

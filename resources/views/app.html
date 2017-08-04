@@ -27,10 +27,12 @@
         					<li><a href="#">Documentation</a></li>
      					</ul>
 
-      					<ul class="nav navbar-nav navbar-right">
+      					<ul class="nav navbar-nav navbar-right" v-if="!user">
         					<li><router-link :to="{path: '/login'}">Login</router-link></li>
         					<li><router-link :to="{path: '/register'}">Register</router-link></li>
-        
+      					</ul>
+      					<ul class="nav navbar-nav navbar-right" v-if="user">
+        					<li><a href="#" @click.prevent="logout">Logout</a></li>
       					</ul>
     				</div>
   				</div>

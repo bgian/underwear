@@ -34,7 +34,7 @@ exports.register = (req, res) => {
   			res.json({
   				success: true, 
   				message: 'Successful created new user.',
-  				token: token
+  				token: 'JWT ' + token
   			})
 		})
 	}
@@ -71,7 +71,7 @@ exports.login = (req, res) => {
 	  		res.json({
 	  			success: true,
 	  			message: 'Successful login for user.',
-	  			token: token
+	  			token: 'JWT ' + token
 	  		})
 
 		}

@@ -1,4 +1,10 @@
 module.exports = [
+	{
+		name: null,
+		path: '/home',
+		component: 'HomePage',
+        auth: true
+	},
     {
         name: 'landing',
         path: '/',
@@ -7,11 +13,13 @@ module.exports = [
     {
         name: 'login',
         path: '/login',
-        component: 'LoginPage'
+        component: 'LoginPage',
+        guest: true
     },
     {
         name: 'register',
         path: '/register',
-        component: 'RegisterPage'
+        component: 'RegisterPage',
+        guest: true
     }
 ]

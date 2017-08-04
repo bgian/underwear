@@ -37,7 +37,9 @@
 
 			register() {
 				auth.register(this.auth).then(response => {
-					console.log(response)
+					this.cookies.setItem('token', response.token, false, '/')
+					Events.$emit('authorizeUser')
+					this.$router.push({path: '/home'})
 				}).catch(errors => {
 					console.log(errors)
 				})

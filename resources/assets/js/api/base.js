@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios from 'axios'
+import Cookies from '../cookies'
 
 class Api {
 
@@ -10,6 +11,7 @@ class Api {
 
     constructor(data) {
         this.data = data;
+        this.cookies = new Cookies()
         for (let field in data) {
             this[field] = data[field];
         }
@@ -78,6 +80,13 @@ class Api {
 
     send(requestType, url, body = {}) {
         const vm = this;
+        const accessToken = this.cookies.getItem('token');
+        if(accessToken) {
+            axios.defaults.headers.common = {
+                "Authorization": accessToken
+            };
+        }
+
         return new Promise((resolve, reject) => {
             axios[requestType]('/api/v' + vm.version + '/' + url, body, {
                 onUploadProgress: (progressEvent) => {
