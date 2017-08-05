@@ -10,7 +10,7 @@ import {setUser} from './store/actions'
 Vue.mixin(helpers)
 
 // Import components
-
+import UnderwearHeader from './components/Header'
 
 // Setup the app
 const front = new Vue({
@@ -20,7 +20,7 @@ const front = new Vue({
 
     //Register global components
     components: {
-    	
+    	UnderwearHeader
     },
 
     computed: {

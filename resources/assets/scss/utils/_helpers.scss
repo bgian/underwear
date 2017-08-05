@@ -1,0 +1,29 @@
+.level {
+	display: flex;
+
+	&.stacked {
+		flex-direction: column;
+	}
+
+	&.full {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+
+	&.center {
+		align-items: center;
+		justify-content: center;
+	}
+
+	&.align-center {
+		align-items: center;
+	}
+
+	&.space-between {
+		justify-content: space-between;
+	}
+
+}
