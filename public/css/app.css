@@ -8410,10 +8410,12 @@ button.close {
 }
 
 .navbar-underwear {
+  position: relative;
   background: #fff;
   -webkit-box-shadow: 0 2px 3px 0 #F3F3F3;
           box-shadow: 0 2px 3px 0 #F3F3F3;
   margin-bottom: 0px;
+  z-index: 9;
 }
 
 .navbar-underwear a {
