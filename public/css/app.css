@@ -8423,7 +8423,9 @@ button.close {
   font-size: 17px;
 }
 
-.navbar-underwear a:hover {
+.navbar-underwear a:hover,
+.navbar-underwear a:focus,
+.navbar-underwear a.router-link-exact-active {
   color: #000;
   background-color: transparent !important;
 }

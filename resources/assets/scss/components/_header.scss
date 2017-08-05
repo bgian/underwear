@@ -9,7 +9,7 @@
 		color: $gray-light;
 		font-size: 17px;
 
-		&:hover {
+		&:hover, &:focus, &.router-link-exact-active {
 			color: #000;
 			background-color: transparent !important;
 		}
