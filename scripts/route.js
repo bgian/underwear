@@ -27,39 +27,15 @@ module.exports = {
                 console.log('-----------------------------------------')
 				console.log('✅ Added route to web.js routes file.')
 
-                //================================================
-                var frontendFile = fs.readFileSync(frontendFilePath, 'utf-8').toString().split("\n")
-                frontendFile.splice(1, 0, "import " + componentName[componentName.length - 1] + 'Page' + " from '../../views/" + component + "'")
-
-                let lineNumber = 0
-                for(let i = 0; i < frontendFile.length; i++) {
-                    if(frontendFile[i] == "const components = {") {
-                        lineNumber = i
-                    }
+                if (!fs.existsSync(__dirname + "/../resources/views/" + componentName[0])) {
+                    fs.mkdirSync(__dirname + "/../resources/views/" + componentName[0])
                 }
 
-                if(lineNumber > 0) {
-                    frontendFile.splice(lineNumber + 1, 0, "    " + componentName[componentName.length - 1] + 'Page,')
-                }
-                var text = frontendFile.join("\n")
-                fs.writeFile(frontendFilePath, text, function (err) {
-                    if (err) {
+                fs.writeFile(__dirname + "/../resources/views/" + component + '.vue', "<template><div>I am your new vue component</div></template>", function(err) {
+                    if(err) {
                         return console.log(err);
                     }else{
-                        console.log('✅ Imported the component on routes.js in your frontend assets.')
-
-                        //============================
-                        if (!fs.existsSync(__dirname + "/../resources/views/" + componentName[0])) {
-                            fs.mkdirSync(__dirname + "/../resources/views/" + componentName[0])
-                        }
-
-                        fs.writeFile(__dirname + "/../resources/views/" + component + '.vue', "<template><div>I am your new vue component</div></template>", function(err) {
-                            if(err) {
-                                return console.log(err);
-                            }else{
-                                console.log("✅ A new vue file was saved: " + component + '.vue');
-                            }
-                        });
+                        console.log("✅ A new vue file was saved: " + component + '.vue');
                     }
                 });
 			}
