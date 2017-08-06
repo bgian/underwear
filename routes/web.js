@@ -2,24 +2,24 @@ module.exports = [
 	{
 		name: null,
 		path: '/home',
-		component: 'HomePage',
+		component: 'user/Home',
         auth: true
 	},
     {
         name: 'landing',
         path: '/',
-        component: 'LandingPage'
+        component: 'base/Landing'
     },
     {
         name: 'login',
         path: '/login',
-        component: 'LoginPage',
+        component: 'auth/Login',
         guest: true
     },
     {
         name: 'register',
         path: '/register',
-        component: 'RegisterPage',
+        component: 'auth/Register',
         guest: true
     }
 ]

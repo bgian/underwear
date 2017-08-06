@@ -1,9 +1,10 @@
-// Set up ======================================================================
+// Set up ====================================================================
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 8080
 const path = require('path')
 const mongoose = require('mongoose')
+const fs = require('fs')
 const passport = require('passport')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')

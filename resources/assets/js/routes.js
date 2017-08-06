@@ -1,32 +1,21 @@
-import LandingPage from '../../views/base/Landing'
-import HomePage from '../../views/user/Home'
-import LoginPage from '../../views/auth/Login'
-import RegisterPage from '../../views/auth/Register'
 import Cookies from './cookies'
 import user from './api/user'
-
-const components = {
-    HomePage,
-	LandingPage,
-	LoginPage, 
-	RegisterPage
-}
 
 const routes = require('../../../routes/web')
 const cookies = new Cookies()
 const frontRoutes = []
 
-for(let i = 0; i < routes.length; i++) {
+routes.forEach(route => {
 	frontRoutes.push({
-		name: routes[i].name,
-		path:  routes[i].path,
-		component: components[routes[i].component],
+		name: route.name,
+		path:  route.path,
+		component: require(`../../views/${route.component}`).default,
 		meta: {
-			requiresAuth: routes[i].auth ? true : false,
-			requiresGuest: routes[i].guest ? true : false
+			requiresAuth: route.auth ? true : false,
+			requiresGuest: route.guest ? true : false
 		}
 	})
-}
+})
 
 const router = new VueRouter({
     mode: 'history',
@@ -50,7 +39,11 @@ router.beforeEach((to, from, next) => {
         if(!cookies.hasItem('token')) {
 	        next()
 	    }else{
-	    	next({path: '/home'})
+	    	user.get().then(response => {
+	        	next({path: '/home'})
+	        }).catch(errors => {
+	        	next()
+	        })
 	    }
     }
 
