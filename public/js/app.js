@@ -33388,12 +33388,43 @@ if (false) {(function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__assets_js_icons_Logo__ = __webpack_require__(13);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
 //
 
-/* harmony default export */ __webpack_exports__["a"] = ({});
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+
+	components: {
+		LogoIcon: __WEBPACK_IMPORTED_MODULE_0__assets_js_icons_Logo__["a" /* default */]
+	},
+
+	computed: {
+		user: function user() {
+			return this.$store.state.user;
+		}
+	},
+
+	mounted: function mounted() {
+		console.log('Home page loaded');
+	}
+});
 
 /***/ }),
 /* 57 */
@@ -33401,9 +33432,37 @@ if (false) {(function () {
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_vm._v("I am your new vue component")])
+  return _c('div', {
+    staticClass: "level full center",
+    attrs: {
+      "id": "landing"
+    }
+  }, [_c('div', {
+    staticClass: "container text-center"
+  }, [_c('div', {
+    staticClass: "logo-circle"
+  }, [_c('logo-icon', {
+    attrs: {
+      "width": "64px",
+      "height": "64px"
+    }
+  })], 1), _vm._v(" "), _c('h1', [_vm._v("Welcome " + _vm._s(_vm.user.name))]), _vm._v(" "), _c('p', [_vm._v("We thought you might have a few questions, keep these two resources in your pocket.")]), _vm._v(" "), _vm._m(0)])])
 }
-var staticRenderFns = []
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', [_c('a', {
+    staticClass: "btn btn-primary btn-lg",
+    attrs: {
+      "href": "#",
+      "role": "button"
+    }
+  }, [_vm._v("Documentation")]), _vm._v(" "), _c('a', {
+    staticClass: "btn btn-default btn-lg",
+    attrs: {
+      "href": "#",
+      "role": "button"
+    }
+  }, [_vm._v("Video tutorials")])])
+}]
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -34119,7 +34178,7 @@ webpackContext.id = 79;
 /* 80 */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n\t<head>\n\t\t<title>Underwear</title>\n\t\t<link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/favicon-32x32.png\">\n\t\t<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/favicon-16x16.png\">\n\t\t<link rel=\"stylesheet\" href=\"/css/app.css\">\n\t</head>\n\n\t<body>\n\t\t<div id=\"app\">\n\t\t\t<underwear-header></underwear-header>\n\t\t\t<router-view></router-view>\n\t\t</div>\n\n\t\t<script src=\"/js/app.js\"></script>\n\t</body>\n</html>";
+module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n\t<head>\n\t\t<title>Underwear</title>\n\t\t<link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/favicon-32x32.png\">\n\t\t<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/favicon-16x16.png\">\n\t\t<link rel=\"stylesheet\" href=\"/css/app.css\">\n\t</head>\n\n\t<body>\n\t\t<div id=\"app\" v-cloak>\n\t\t\t<underwear-header></underwear-header>\n\t\t\t<router-view></router-view>\n\t\t</div>\n\n\t\t<script src=\"/js/app.js\"></script>\n\t</body>\n</html>";
 
 /***/ })
 /******/ ]);
