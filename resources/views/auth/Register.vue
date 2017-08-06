@@ -2,7 +2,7 @@
 	<div class="container push">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
-				<form @submit.prevent="login">
+				<form @submit.prevent="register">
 					<div class="form-group">
 	    				<label for="exampleInputName1">Your name</label>
 	    				<input v-model="auth.name" type="text" class="form-control" id="exampleInputName1" placeholder="Name">

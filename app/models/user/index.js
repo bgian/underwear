@@ -25,16 +25,5 @@ userSchema.methods.comparePassword = function(password) {
 }
 
 
-userSchema.pre('save', (next) => {
-    var user = this;
-    if (this.isModified('password') || this.isNew) {
-        user.password = user.generateHash(user.password)
-        next()
-    } else {
-        return next()
-    }
-})
-
-
 // create the model for users
 module.exports = mongoose.model('User', userSchema);
