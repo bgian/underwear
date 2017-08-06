@@ -1,4 +1,5 @@
 let mix = require('laravel-mix')
+let webpack = require('webpack')
 
 /*
  |--------------------------------------------------------------------------
@@ -12,7 +13,8 @@ let mix = require('laravel-mix')
  */
 
 mix.js('resources/assets/js/app.js', 'public/js/')
-   .sass('resources/assets/scss/app.scss', 'public/css')
+	.sass('resources/assets/scss/app.scss', 'public/css')
+   
 
 // Full API
 // mix.js(src, output);

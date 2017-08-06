@@ -1,7 +1,7 @@
 const routes = require('./web')
 
 module.exports = (app, passport) => {
-    for(let i = 0; i < routes.length; i++) {
-        app.get(routes[i].path, (req, res) => {  res.render('app.html') })
-    }
+    routes.forEach(route => {
+    	app.get(route.path, (req, res) => {  res.render('app.html') })
+    })
 }
