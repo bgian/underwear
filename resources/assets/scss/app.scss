@@ -1,16 +1,22 @@
 //Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,600");
 
 //Utils
-@import "utils/variables";
+@import 'utils/variables',
+		'utils/base',
+		'utils/typography',
+		'utils/helpers';
 
 //Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
 
+//Components
+@import 'components/header',
+		'components/logo';
 
-.navbar {
-	margin-bottom: 0px;
-}
+//Pages
+@import 'pages/landing';
+
 
 .push {
 	margin-top: 50px;

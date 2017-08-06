@@ -1,0 +1,17 @@
+.navbar-underwear {
+	position: relative;
+	background: #fff;
+	box-shadow: 0 2px 3px 0 #F3F3F3;
+	margin-bottom: 0px;
+	z-index: 9;
+
+	a {
+		color: $gray-light;
+		font-size: 17px;
+
+		&:hover, &:focus, &.router-link-exact-active {
+			color: #000;
+			background-color: transparent !important;
+		}
+	}
+}
