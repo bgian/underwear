@@ -1166,7 +1166,6 @@ var Api = function () {
                 }).then(function (response) {
                     resolve(response.data);
                 }).catch(function (error) {
-                    console.log(error);
                     reject(error.response.data);
                 });
             });

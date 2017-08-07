@@ -97,7 +97,6 @@ class Api {
                 resolve(response.data);
             })
             .catch((error) => {
-                console.log(error)
                 reject(error.response.data);
             })
         })
