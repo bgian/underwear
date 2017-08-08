@@ -15,6 +15,7 @@ require('dotenv').config()
 // Configuration ===============================================================
 if(process.env.DB_NAME) {
 	mongoose.connect(config.database.url + config.database.db);
+	mongoose.Promise = global.Promise;
 }
 
 

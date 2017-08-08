@@ -20,7 +20,7 @@ export class AuthController extends Controller {
 
 		let validation = super.validate({
 			name: 'required',
-			email: 'email|required',
+			email: 'email|required|unique:user,email',
 			password: 'required'
 		}, req)
 
@@ -33,14 +33,7 @@ export class AuthController extends Controller {
   		newUser.email = req.body.email
   		newUser.password = newUser.generateHash(req.body.password)
 
-		newUser.save((err) => {
-  			if (err) {
-    			return res.status(422).json({
-    				success: false, 
-    				message: 'That email is already in use.'
-    			})
-  			}
-
+		newUser.save(() => {
   			let token = jwt.sign(newUser, super.config().database.secret)
   			return res.json({
   				success: true, 
