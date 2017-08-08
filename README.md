@@ -1,6 +1,6 @@
 # Underwear
 
-Underwear is a lightweight node MVC framework built for single paged applications using vue.js. It comes with built in authentication using passport, some useful helpers to make things easier and not forgetting a nice folder stucture to keep things orgainsed.
+Underwear is a lightweight node MVC framework built for single paged applications using vue.js. It comes with built in authentication using passport, some useful helpers to make things easier and not forgetting a nice folder structure to keep things orgainsed.
 
 ## Getting Started
 
