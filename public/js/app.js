@@ -33284,7 +33284,7 @@ router.beforeEach(function (to, from, next) {
 			next();
 		} else {
 			__WEBPACK_IMPORTED_MODULE_1__api_user__["a" /* default */].get().then(function (response) {
-				next({ path: '/home' });
+				next({ name: 'homepage' });
 			}).catch(function (errors) {
 				next();
 			});
@@ -33302,7 +33302,7 @@ router.beforeEach(function (to, from, next) {
 /***/ (function(module, exports) {
 
 module.exports = [{
-    name: null,
+    name: 'homepage',
     path: '/home',
     component: 'user/Home',
     auth: true

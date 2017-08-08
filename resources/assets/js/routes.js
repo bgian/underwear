@@ -40,7 +40,7 @@ router.beforeEach((to, from, next) => {
 	        next()
 	    }else{
 	    	user.get().then(response => {
-	        	next({path: '/home'})
+	        	next({name: 'homepage'})
 	        }).catch(errors => {
 	        	next()
 	        })
