@@ -52,10 +52,8 @@ export class AuthController extends Controller {
 	login(req, res) {
 
 		let validation = super.validate({
-			name: 'required',
 			email: 'email|required',
-			password: 'required',
-			teamSize: 'integer'
+			password: 'required'
 		}, req)
 
 		if(!validation.success) {

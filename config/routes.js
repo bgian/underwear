@@ -1,4 +1,4 @@
-const routes = require('./web')
+const routes = require('../routes/web')
 
 module.exports = (app, passport) => {
     routes.forEach(route => {

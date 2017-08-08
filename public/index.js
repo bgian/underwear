@@ -50,6 +50,6 @@ app.use(passport.session())
 
 // routes ======================================================================
 require('../routes/api.js')(app, passport)
-require('../routes/server.js')(app, passport)
+require('../config/routes.js')(app, passport)
 
 module.exports = app
