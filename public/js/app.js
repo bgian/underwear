@@ -34046,8 +34046,6 @@ if (false) {(function () {
 //
 //
 //
-//
-//
 
 
 
@@ -34141,17 +34139,9 @@ var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _
     staticClass: "nav navbar-nav"
   }, [_c('li', [_c('a', {
     attrs: {
-      "href": "#"
+      "href": "http://GitHub.com/JosephSmith127/underwear"
     }
-  }, [_vm._v("Documentation")])]), _vm._v(" "), _c('li', [_c('a', {
-    attrs: {
-      "href": "#"
-    }
-  }, [_vm._v("GitHub")])]), _vm._v(" "), _c('li', [_c('a', {
-    attrs: {
-      "href": "#"
-    }
-  }, [_vm._v("News")])])])
+  }, [_vm._v("GitHub")])])])
 }]
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }

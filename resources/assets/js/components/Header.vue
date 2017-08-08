@@ -15,9 +15,7 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="#">Documentation</a></li>
-					<li><a href="#">GitHub</a></li>
-					<li><a href="#">News</a></li>
+					<li><a href="http://GitHub.com/JosephSmith127/underwear">GitHub</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right" v-if="!user">
