@@ -13,7 +13,11 @@ let webpack = require('webpack')
  */
 
 mix.js('resources/assets/js/app.js', 'public/js/')
+	.options({
+		processCssUrls: false
+	})
 	.sass('resources/assets/scss/app.scss', 'public/css')
+
    
 
 // Full API
