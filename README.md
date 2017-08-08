@@ -8,7 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-This is a node server, so I'll assume you've installed node on your system. If you want to use the `npm run server-watch` you'll want to download and install nodemon. This will allow the server to restart when changes are made, also this was built with mongoDB database in mind read [this](https://scotch.io/tutorials/an-introduction-to-mongodb) to learn how to install and run MongoDB on your machine.
+This is a node server, so I'll assume you've installed node on your system. If you want to use the `npm run server-watch` you'll want to download and install nodemon. This will allow the server to restart when changes are made, also this was built with mongoDB database in mind. Read [this](https://scotch.io/tutorials/an-introduction-to-mongodb) to learn how to install and run MongoDB on your machine.
 
 ```
 npm install -g nodemon
@@ -18,25 +18,25 @@ npm install -g nodemon
 
 Once you've made a folder on your system and cloned this repository into it. You'll need to run these commands to get things up and running.
 
-First of all install on the node modules.
+First of all install the node modules.
 
 ```
 npm install
 ```
 
-Then we'll want to make a .env file, I've included a .env.example file with some fundimental variables so we'll rename that to .env
+Then we'll want to make a .env file, I've included a .env.example file with some fundamental variables so we'll rename that to .env
 
 ```
 mv .env.example .env
 ```
 
-Next all thats left to do is start up the server. Which you can do with this command.
+Next all thats left to do is start up the server, which you can do with this command:
 
 ```
 npm start
 ```
 
-If you'd like to watch for changes and restart the server on change to load the new data, then you'll want to use nodemon. I've written how to install in above. To run this you simply type this command.
+If you'd like to watch for changes and restart the server on change to load the new data, then you'll want to use nodemon. I've written how to install it above. To run this you simply type this command:
 
 ```
 npm run start-watch
@@ -44,7 +44,7 @@ npm run start-watch
 
 ## Running the tests
 
-Tests are ran using mocha, they read the files in your ./tests folder. Use the following command to run them.
+Tests are run using mocha, they read the files in your ./tests folder. Use the following command to run them.
 
 ```
 npm run test-unit
@@ -80,7 +80,7 @@ Because we are using vue as our router, the route views are vue files. These can
 ```javascript
 {
     name: 'landing', //The name of the route
-    path: '/', //The path you'd like to point to the route
+    path: '/', //The path of the page
     component: 'base/Landing', //The vue file for the route to display this is a string of the file path starting from the ./resources/views/
     //auth: true, //Optional auth boolean, if true then it'll add auth middleware on the route so only logged in users can access it
     //guest: true, //Optional guest boolean, if true then it'll redirect you to the homepage route if logged in
