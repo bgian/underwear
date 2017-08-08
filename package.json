@@ -4,7 +4,7 @@
     "description": "Underwear is a simple and lightweight node framework for most applications.",
     "main": "index.js",
     "scripts": {
-        "test-unit": "istanbul cover _mocha $(find ./test -name \"*.spec.js\" -not -path \"./node_modules/*\")",
+        "test-unit": "istanbul cover _mocha $(find ./tests -name \"*.spec.js\" -not -path \"./node_modules/*\")",
         "new-route": "node scripts/route.js generate",
         "start": "babel-node index.js  --presets es2015,stage-2",
         "start-watch": "nodemon index.js --exec babel-node --presets es2015,stage-2",

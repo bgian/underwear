@@ -1,6 +1,6 @@
 module.exports = [
 	{
-		name: null,
+		name: 'homepage',
 		path: '/home',
 		component: 'user/Home',
         auth: true
